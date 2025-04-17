@@ -3,13 +3,10 @@
 import { useCartStore } from '@/store/cartStore';
 import toast from 'react-hot-toast';
 
+import type { Product } from '@/services/api';
+
 interface AddToCartButtonProps {
-  product: {
-    id: number;
-    title: string;
-    price: number;
-    image: string;
-  };
+  product: Product;
   className?: string;
 }
 
