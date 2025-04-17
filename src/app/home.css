@@ -1,0 +1,144 @@
+.home {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
+.hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  max-height: 800px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  color: white;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  background: white;
+  color: var(--primary-color);
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.featured {
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.featured h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  gap: clamp(1rem, 2vw, 2rem);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+}
+
+.product-skeleton {
+  background: var(--menu-background);
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 100%;
+  min-height: 400px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeleton-image {
+  width: 100%;
+  padding-top: 100%;
+  background: var(--border-color);
+}
+
+.skeleton-content {
+  padding: 1.5rem;
+}
+
+.skeleton-title {
+  height: 1.5rem;
+  background: var(--border-color);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-price {
+  height: 2rem;
+  background: var(--border-color);
+  border-radius: 0.25rem;
+  width: 40%;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .hero {
+    height: 70vh;
+    min-height: 400px;
+  }
+
+  .featured {
+    padding: 0 2rem;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 640px) {
+  .hero {
+    height: 60vh;
+    min-height: 300px;
+    padding: 1rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .featured {
+    padding: 0 1rem;
+  }
+
+  .products-grid {
+    gap: 1rem;
+  }
+}
