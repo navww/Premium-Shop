@@ -23,12 +23,7 @@ export const useAuthStore = create<AuthState>()(
     }),
     {
       name: 'auth-store',
-      onRehydrateStorage: (state) => {
-        return () => {
-          // @ts-expect-error Zustand store API is available here
-          (state as any)?.setState?.({ hasHydrated: true });
-        };
-      },
+      onRehydrateStorage: (state) => (state as any)?.setState?.({ hasHydrated: true })
     }
   )
 );
